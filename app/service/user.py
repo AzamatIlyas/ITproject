@@ -16,12 +16,13 @@ class UserService:
         return await UserDAO.get_user_by_email(email)
     
     @classmethod
-    async def create_user(cls, first_name: str, last_name: str, email: str, password: str):
+    async def create_user(cls, first_name: str, last_name: str, email: str, password: str, student_id: str):
         return await UserDAO.create(
             first_name=first_name, 
             last_name=last_name,
             email=email, 
-            password=password
+            password=password,
+            student_id=student_id
             )
 
     @classmethod

@@ -46,7 +46,7 @@ def verify_token(token: str, key: str):
 class AuthService:
 
     @classmethod
-    async def register(cls, first_name: str, last_name, email: EmailStr, password: str):
+    async def register(cls, first_name: str, last_name, email: EmailStr, password: str, student_id: str):
 
         # if not cls.verify_password_from_scripts(password):
         #     raise HTTPException(status_code=400)
@@ -58,7 +58,7 @@ class AuthService:
             raise HTTPException(status_code=400, detail="Email already registered")
 
         hashed_password = pwd_context.hash(password)
-        return await UserService.create_user(first_name=first_name, last_name=last_name, email=email, password=hashed_password)
+        return await UserService.create_user(first_name=first_name, last_name=last_name, email=email, password=hashed_password, student_id=student_id)
     
     @classmethod
     async def login(cls, response: Response, email: str, password: str):

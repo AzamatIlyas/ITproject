@@ -11,10 +11,9 @@ class SLogin(BaseModel):
 class SUserRegistration(SLogin):
     first_name: str
     last_name: str
+    student_id: str
 
 class SUserResponse(BaseModel):
     first_name: str
     last_name: str
     email: str
-    level: str
-    xp: int

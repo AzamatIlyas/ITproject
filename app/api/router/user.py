@@ -17,7 +17,8 @@ async def register_user(user: SUserRegistration):
             email=user.email, 
             password=user.password,
             first_name=user.first_name,
-            last_name=user.last_name
+            last_name=user.last_name,
+            student_id=user.student_id
         )
 
 @router.post("/login")
